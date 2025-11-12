@@ -2,7 +2,7 @@ const crypto = require('crypto');
 
 // In-memory storage (will reset on function cold start)
 let WORKERS = {};
-const PASSWORD_HASH = '4c844d1623a7e839b349af70b3ea5f55c117a3dc83fde0326fa8b9f17eec484d'; // Your hash
+const PASSWORD_HASH = 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'; // Your hash
 
 // Clean up old workers every 30 seconds
 setInterval(() => {
