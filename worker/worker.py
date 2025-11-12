@@ -2,7 +2,7 @@
         hide_console()
     
     # Try to auto-detect password from hash
-    TARGET_HASH = "ff3d52d9c823d32f76d86ffd3fb473c62b61ba0b67a63e6074ceda5ab19b9e3a"
+    TARGET_HASH = "4c844d1623a7e839b349af70b3ea5f55c117a3dc83fde0326fa8b9f17eec484d"
     detected_password = find_password_from_hash(TARGET_HASH)
     
     if detected_password:
