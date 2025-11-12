@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>//_RENDER_FARM_CTRL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>//_RENDER_FARM_CONTROL_SYSTEM</h1>
+            <p>_[NETLIFY_DEPLOYED]_//_AWAITING_AUTHENTICATION</p>
+            <p class="server-info" id="serverInfo">🌐 SERVER: CONNECTING...</p>
+        </div>
+        
+        <div class="auth-panel" id="authPanel">
+            <h3>🔐 SYSTEM ACCESS</h3>
+            <input type="password" id="passwordInput" class="auth-input" placeholder="ENTER_ACCESS_CODE">
+            <button class="auth-btn" onclick="authenticate()">INITIATE_CONNECTION</button>
+            <div id="authStatus" style="margin-top: 10px; font-size: 12px;"></div>
+        </div>
+        
+        <div class="dashboard" id="dashboard">
+            <div class="panel workers-panel">
+                <h3>🌐 CONNECTED_NODES</h3>
+                <div class="btn-group">
+                    <button class="btn" onclick="scanWorkers()">SCAN_NETWORK</button>
+                    <button class="btn" onclick="refreshStatus()">REFRESH_STATUS</button>
+                </div>
+                <div class="worker-list" id="workerList">
+                    <div class="worker-item scanning">
+                        <span class="status-indicator online-dot"></span>
+                        SCANNING_FOR_WORKERS...
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel terminal-panel">
+                <h3>💻 TERMINAL_ACCESS</h3>
+                <div class="terminal" id="terminal">
+                    <div class="terminal-line">// TERMINAL_READY</div>
+                    <div class="terminal-line">// NETLIFY_SERVERLESS_MODE</div>
+                </div>
+                <select id="workerSelect" class="command-input">
+                    <option value="all">BROADCAST_TO_ALL_NODES</option>
+                </select>
+                <input type="text" id="commandInput" class="command-input" placeholder="EXECUTE_COMMAND..." onkeypress="handleCommandKey(event)">
+                <div class="btn-group">
+                    <button class="btn" onclick="executeCommand()">EXECUTE</button>
+                    <button class="btn" onclick="clearTerminal()">CLEAR</button>
+                    <button class="btn danger" onclick="emergencyStop()">EMERGENCY_STOP</button>
+                </div>
+            </div>
+            
+            <div class="panel command-panel">
+                <h3>⚡ QUICK_COMMANDS</h3>
+                <div class="btn-group">
+                    <button class="btn" onclick="quickCommand('tasklist')">PROCESS_LIST</button>
+                    <button class="btn" onclick="quickCommand('systeminfo')">SYSTEM_INFO</button>
+                    <button class="btn" onclick="quickCommand('ipconfig')">NETWORK_INFO</button>
+                </div>
+                <div class="btn-group">
+                    <button class="btn danger" onclick="quickCommand('taskkill /f /im blender.exe')">KILL_BLENDER</button>
+                    <button class="btn danger" onclick="quickCommand('taskkill /f /im maya.exe')">KILL_MAYA</button>
+                    <button class="btn danger" onclick="quickCommand('taskkill /f /im 3dsmax.exe')">KILL_3DSMAX</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
